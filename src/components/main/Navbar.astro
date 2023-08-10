@@ -1,0 +1,149 @@
+<nav class="navbar">
+    <div class="navbar-wrapper">
+        <a href="/" class="logo" aria-label="Logo Crece Simple">
+            <img src="../img/logo/logo.png" alt="Logo Crece Simple">
+        </a>
+        <input id="checkbox" type="checkbox" name="checkbox" value="checkbox"/>
+        <label class="navbar-toggler" for="checkbox">
+        <div class="toggler">
+            <img src="../svg/hamburger.svg" alt="Hamburger toggler">
+        </div>
+        </label>
+        <div class="navbar-items">
+            <a class="active" href="#Home">Inicio</a>
+            <a href="#About-me">Sobre mi</a>
+            <a href="#Services">Servicios</a>
+            <a href="#Affiliates">Afiliados</a>
+            <a href="#Contact">Contacto</a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* Navbar */
+    .navbar {
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+
+        isolation: isolate;
+        inset: 0 0 auto;
+
+        transition: all 300ms ease;
+    }
+
+    .navbar-wrapper {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        max-width: 1100px;
+        height: var(--height);
+
+        margin: 0 auto;
+        padding: 1.5em calc(2vw + .5em);
+    }
+
+    .navbar-wrapper .logo {
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        font-size: calc(var(--font) - 0.1rem);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .navbar-wrapper .logo img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+
+    .navbar-wrapper .logo span {
+        font-size: calc(var(--font) + .1rem);
+    }
+
+    #checkbox {
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: none;
+
+        background-color: transparent;
+    }
+
+    .toggler {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .25em;
+
+        color: #B0B0B0;
+        border: 1px solid #B0B0B0;
+        border-radius: var(--radius);
+
+        z-index: 2;
+    }
+
+    .toggler:is(:hover, :focus-within) {
+        opacity: .5;
+    }
+
+    .toggler:is(:active) {
+        scale: 0.95;
+        box-shadow: 0 0 0 2px hsl(var(--text));
+    }
+
+    .toggler img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .navbar-items {
+        margin-inline-start: auto;
+        display: flex;
+        gap: 1em;
+    }
+
+    .navbar-items a {
+        margin-inline-start: auto;
+
+        color: hsl(var(--nav-link), 50%);
+        font-size: calc(var(--font) - 0.1rem);
+        text-decoration: none;
+        text-transform: uppercase;
+
+        position: relative;
+    }
+
+    .navbar-items a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+
+        width: 0%;
+        height: 2px;
+
+        background-color: hsl(var(--important));
+
+        transition: 200ms linear;
+    }
+
+    .navbar-items a:hover {
+        color: hsl(var(--nav-link));
+    }
+
+    .navbar-items a:is(:hover, :focus-within)::before {
+        width: 70%;
+    }
+
+    .navbar:is(.navbar-bgswap) .navbar-items a:is(.active)::after {
+        background-color: hsl(var(--white)) !important;
+    }
+
+    .separator {
+        color: hsl(var(--text));
+    }
+</style>

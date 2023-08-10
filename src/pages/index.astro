@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact.astro';
+import Products from '../components/Products.astro';
+---
+
+<Layout
+  title="Crece simple – Asesoría y gestión empresarial"
+  description="Asesoría y gestión empresarial personalizada para tu empresa."
+  ogTitle="Crece simple – Asesoría y gestión empresarial"
+  ogDescription="Asesoría y gestión empresarial personalizada para tu empresa."
+  ogUrl="https://deft-tulumba-dee734.netlify.app/"
+  canonicalURL="https://deft-tulumba-dee734.netlify.app/"
+  favicon="/favicon/favicon.svg"
+  faviconLight="/favicon/favicon.svg">
+	<main>
+		<Hero />
+		<About />
+        <Products />
+		<Testimonials />
+		<Contact />
+	</main>
+
+  <div class="popup">
+    <div class="popup-alert">
+        <div class="alert-container">
+            <div class="alert">
+                <div>
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+                <p class="social-media"> Si te gusto esta plantilla, no dudes en contactarme rellenando el <a href="#Contact" style="text-decoration: underline; color: white;">formulario</a>. Me pondré en contacto contigo via Whatsapp chat o Email.</p>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="popup-toggle">
+        <span>+</span>
+    </button>
+</div>
+</Layout>
+
+<style>
+.alert {
+    display: flex;
+    gap: 1em;
+
+    max-width: 600px;
+
+    margin: auto;
+    padding: 1em;
+    color: white;
+    background-color: rgba(153, 50, 204);
+    border-radius: var(--radius-accent);
+}
+
+.alert > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(2.5rem, 1.5rem + 1.3333vw, 3rem);
+}
+
+.popup-alert {
+    display: flex;
+    bottom: 85px;
+    right: 20px;
+
+    position: fixed;
+    width: 0px;
+    height: 0px;
+    background-color: rgba(153, 50, 204);
+    border: 1px solid white;
+    border-radius: var(--radius);
+
+    opacity: 0;
+    visibility: collapse;
+    z-index: 9999;
+}
+
+.popup-alert.active-alert {
+    width: 400px;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 500ms ease-in-out;
+}
+
+.popup-alert.active-alert + .popup-toggle {
+    background-color: rgba(153, 50, 204);
+    border: 1px solid white;
+    scale: 1.05;
+}
+
+.popup-alert.active-alert + .popup-toggle span {
+    rotate: 45deg;
+}
+
+.popup-alert::before {
+    content: '';
+    position: absolute;
+    right: 10px;
+    bottom: -11px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(153, 50, 204);
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    rotate: 45deg;
+    z-index: 9990;
+}
+
+.popup-toggle {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+
+    background-color: hsl(var(--important));
+    border: 0;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.popup-toggle span {
+    display: block;
+    width: 100%;
+    color: hsl(var(--text));
+    font-size: 2rem;
+    transition: rotate 300ms linear;
+}
+</style>
+
+<script>
+  import '../js/script.js';
+</script>

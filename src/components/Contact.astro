@@ -1,0 +1,261 @@
+<div class="divider">
+    <div class="custom-shape-divider-bottom-1681399354">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+        </svg>
+    </div>
+</div>
+
+<section id="Contact">
+    <div class="wrapper">
+        <form action="https://formsubmit.co/dingodille16@hotmail.com" method="POST">
+            <div class="form-information">
+                <h3>Contacto</h3>
+                <hr>
+                <p>Si tienes alguna duda, consulta o <b>compras al por mayor</b>, no dudes en enviarnos tu informacion.</p>
+                <p><i class="fa-solid fa-phone"></i> Te contactaremos directamente por <b><i class="fa-brands fa-whatsapp"></i> Whatsapp</b> o <b><i class="fa-solid fa-envelope"></i> Email</b>.</p>
+            </div>
+            <div class="form-wrapper">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" name="Nombre" placeholder="Nombre Apellido" autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="Email" placeholder="ejemplo@email.com" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Telefono</label>
+                    <input id="telefono" type="text" name="Telefono" placeholder="+569 1234 5678" autocomplete="tel">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <textarea name="Descripcion" id="descripcion" cols="30" rows="7" placeholder="Buenas tardes, me gustaria conversar respecto de uno de los planes presentados arriba."></textarea>
+                </div>
+                <button class="submit-button" type="submit" aria-label="Botón para enviar información.">
+                    <span></span>
+                </button>
+            </div>
+        </form>
+        <div class="map-wrapper">
+            <h3>Ubicacion</h3>
+            <hr>
+            <h4><i class="fa-solid fa-location-dot"></i> Av. Heroes de la Concepcion #2555</h4>
+            <h4>Local 205 - Segundo piso</h4>
+            <!--The div element for the map -->
+            <iframe title="Mapa de Google Maps" id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.629214419023!2d-70.14498374984643!3d-20.232723252951633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915215bc3efe03d9%3A0xe1c9577a6f8ed42c!2sMallplaza%20Iquique!5e0!3m2!1sen!2scl!4v1668007012495!5m2!1sen!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+
+<style>
+    .custom-shape-divider-bottom-1681399354 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+
+    .custom-shape-divider-bottom-1681399354 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 100px;
+    }
+
+    .custom-shape-divider-bottom-1681399354 .shape-fill {
+        fill: hsl(var(--main-dark));
+    }
+
+    /* Contact */
+    #Contact {
+        background-color: hsl(var(--main-dark));
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        margin-inline: auto;
+        max-width: 1100px;
+        max-height: fit-content;
+        padding: var(--padding);
+    }
+
+    .wrapper > * {
+        flex: 1 0 0;
+        min-width: min(300px, 100%);
+    }
+
+    .wrapper > * {
+       
+    }
+
+    #Contact form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        width: 100%;
+        max-width: 1100px;
+        margin: 1em auto;
+        padding: var(--padding);
+        
+        border: 1px solid hsl(var(--border-clr), 20%);
+        border-top: 5px solid hsl(var(--important));
+        border-bottom: 5px solid hsl(var(--important));
+        border-radius: var(--radius-accent);
+    }
+
+    #Contact form .form-information {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    #Contact form .form-information h3 {
+        margin: 0;
+    }
+
+    #Contact form .form-information p:nth-of-type(1) {
+        margin: 0;
+    }
+
+    #Contact form .form-information p:nth-of-type(2) {
+        color: gray;
+        font-size: .9rem;
+        margin-top: 0;
+    }
+
+    #Contact form .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 600px;
+        gap: .75em;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: .25em;
+        font-size: 1.5rem;
+    }
+
+    .form-group input {
+        flex: 1 0 4ch;
+
+        padding-inline-start: .5em;
+
+        color: hsl(var(--text-contrast));
+        border: none;
+        border-radius: var(--radius);
+        font-family: inherit;
+    }
+
+    .form-group textarea {
+        resize: none;
+        padding-block-start: .5em;
+        padding-inline: .5em;
+        color: hsl(var(--text-contrast));
+        border: none;
+        border-radius: var(--radius);
+        font-family: inherit;
+        font-size: .875rem;
+    }
+
+    .form-group input:is(:focus, :focus-within),
+    .form-group textarea:is(:focus, :focus-within) {
+        outline: 3px solid hsl(var(--important));
+        outline-offset: 0;
+    }
+
+    .submit-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 56px;
+        height: 56px;
+
+        padding: var(--padding);
+        margin: auto;
+
+        color: hsl(var(--text));
+        background-color: hsl(var(--important));
+        border: 0;
+        border-radius: 50%;
+        
+        font-size: 1.75rem;
+        overflow: hidden;
+    }
+
+    .submit-button span::after {
+        content: '\f0e0';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+
+    .submit-button:is(:hover, :focus, :focus-within) span::after {
+        content: '\f658';
+    }
+
+    .submit-button:is(:active) {
+        scale: .9;
+    }
+
+    .submit-button:is(:active) span {
+        transform: translateX(200%);
+        transition: 200ms ease-in;
+    }
+
+    .submit-button:is(:active) span::after {
+        content: '\f0e0';
+    }
+
+    .map-wrapper {
+        width: 100%;
+        max-width: 1100px;
+
+        margin: 1em auto;
+        padding: var(--padding);
+        border: 1px solid hsl(var(--border-clr), 20%);
+        border-top: 5px solid hsl(var(--important));
+        border-bottom: 5px solid hsl(var(--important));
+        border-radius: var(--radius-accent);
+    }
+
+    .map-wrapper h3 {
+        margin: 0;
+    }
+
+    .map-wrapper h4 {
+        color: gray;
+        font-size: calc(var(--font) - 0.1rem);
+    }
+
+    .map-wrapper h4:nth-of-type(1) {
+        margin: 0;
+    }
+
+    .map-wrapper h4:nth-of-type(2) {
+        margin-top: 0;
+    }
+
+    #map {
+        width: 100%;
+        height: clamp(300px, 50vw, 600px);
+        border: 0;
+        border-radius: var(--radius);
+    }
+
+    @media only screen and (max-width: 760px) {
+        #Contact > * {
+            flex: 1 0 100%;
+        }
+    }
+</style>

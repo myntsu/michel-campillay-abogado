@@ -1,0 +1,94 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<button type="button" class="cta-button">
+  <a
+    href="#Contact"
+    aria-label="Asesorate con nosotros"
+    class="call-to-action">
+    <span class="contact-call"> Contactame</span>
+    <Icon
+      class="contact-svg"
+      name="mdi:arrow-down-bold"
+    />
+  </a>
+</button>
+
+<style lang="scss">
+  .cta-button {
+    $width: 7em;
+    $height: calc($width / 3);
+    border: none;
+    background-color: unset;
+    padding: 0;
+
+    box-shadow: 
+      2px 2px 0 hsl(var(--white));
+
+    border-radius: .25rem;
+
+    &:is(:hover, :focus-visible) {
+      .call-to-action {
+        .contact-call {
+          display: none;
+        }
+
+        .contact-svg {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: all;
+
+          translate: 0%;
+          transition: translate .7s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+      }
+    }
+
+    &:is(:active) {
+      box-shadow: none;
+      transform: translate(2px, 2px);
+      // transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .call-to-action {
+      text-decoration: none;
+      color: unset;
+
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      width: #{$width};
+      height: #{$height};
+
+      color: hsl(var(--white));
+      background-color: hsl(var(--important), 0.8);
+      font-size: clamp(1.5rem, 0.7021rem + 2.5532vw, 3rem);
+
+      border-radius: .25rem;
+
+      position: relative;
+      overflow: hidden;
+
+      & > * {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .contact-svg {
+        opacity: 0;
+        visibility: collapse;
+        pointer-events: none;
+
+        translate: 0 -300%;
+
+        width: clamp(3rem, 2.4681rem + 1.7021vw, 4rem);
+        aspect-ratio: 1;
+        line-height: 0;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,240 @@
+---
+// components import
+import CallToAction from "./utility/CallToAction.astro";
+
+---
+
+<header id="Home">
+    <div class="hero-wrapper">
+        <div class="headers-mask">
+            <h1>Importante para SEO</h1>
+            <h2>Otro texto <span class="important-contrast">complementario</span> para el SEO</h2>
+            <CallToAction />
+        </div>
+        
+        <div class="custom-shape-divider-bottom-1690984327">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+            </svg>
+        </div>
+</header>
+
+<style>
+    /* Header */
+    #Home {
+        background-image:
+            radial-gradient(
+                circle at 50%,
+                hsl(0, 0%, 0%, 100%) 1%,
+                transparent,
+                transparent),
+            linear-gradient(
+                180deg,
+                hsl(0, 0%, 0%, 100%) 5%,
+                transparent,
+                transparent
+            ),
+            url('/img/hero/hero.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        position: relative;
+        isolation: isolate;
+        z-index: 0;
+
+        height: 150svh;
+        height: 150vh;
+    }
+
+    #Home::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        inset: 0;
+        background-color: hsl(var(--main-dark));
+        z-index: -1;
+        opacity: .2;
+    }
+
+    .hero-wrapper {
+        width: 100%;
+        height: 100svh;
+        height: 100vh;
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .headers-mask {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        margin: auto;
+        height: 100%;
+    }
+
+    .hero-wrapper h1,
+    .hero-wrapper h2 {
+        margin: 0;
+    }
+
+    .hero-wrapper h1 {
+        font-size: clamp(2rem, 1.6154rem + 1.2308vw, 3rem);
+    }
+
+    .hero-wrapper h2 {
+        font-size: clamp(1rem, 0.6154rem + 1.2308vw, 2rem);
+        margin-block-end: 1rem;
+    }
+
+    .call-to-action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: min(12ch, 100%);
+        margin-block-start: 1rem;
+        padding: 0 1rem;
+        
+        background-image: linear-gradient(
+            145deg,
+            hsl(var(--important)) 5%,
+            hsl(var(--important), .8) 5%,
+            hsl(var(--important), .5) 50%,
+            hsl(var(--important), .1) 90%
+            );
+        background-size: 400%;
+        font-size: calc(var(--font) * 2);
+        color: hsl(var(--white));
+        text-align: center;
+        text-decoration: none;
+        
+        border: .1rem solid hsl(var(--white), .2);
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+    }
+
+    .call-to-action::after {
+        content: '\f103';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        transform: translate(0%, -100%);
+    }
+
+    .call-to-action:is(:hover, :focus-visible) {
+        border: .1rem solid hsl(var(--important));
+    }
+
+    .call-to-action:is(:hover, :focus-visible)::before {
+        content: '';
+        opacity: 0;
+        transition: opacity 150ms linear;
+    }
+
+    .call-to-action:is(:hover, :focus-visible)::after {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        transform: translate(0%, 0%);
+        transition: all 300ms linear;
+    }
+
+    .custom-shape-divider-bottom-1690984327 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+
+    .custom-shape-divider-bottom-1690984327 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 100px;
+    }
+
+    .custom-shape-divider-bottom-1690984327 .shape-fill {
+        fill: hsl(var(--main-dark));
+    }
+
+    @media only screen and (max-width: 760px) {
+        .navbar {
+            background-color: hsl(var(--main-dark));
+        }
+
+        .navbar-wrapper {
+            justify-content: space-between;
+            position: relative;
+
+            padding: 2em 1.5em;
+        }
+
+        .navbar-toggler {
+            display: inline;
+        }
+
+        .navbar-items {
+            visibility: hidden;
+            position: absolute;
+            flex-direction: column;
+            gap: 1em;
+
+            opacity: 0;
+            transform: translateY(-150%);
+        }
+
+        #checkbox:checked~.navbar {
+            background-color: red;
+        }
+
+        #checkbox:checked {
+            margin-bottom: 5rem;
+        }
+
+        #checkbox:checked~.navbar-items {
+            visibility: visible;
+            top: calc(var(--height));
+            left: 0;
+            z-index: 1;
+
+            width: 100%;
+            padding: 1em;
+            margin-top: calc(var(--font) + 2vh);
+            padding-top: calc(var(--font) + 2vh);
+
+            background-color: hsl(var(--main-dark));
+            border-bottom: 1px solid hsl(var(--border-clr), 80%);
+
+            opacity: 1;
+            transform: translateY(0%);
+            transform-origin: top;
+            transition: 500ms ease;
+        }
+
+        #checkbox:checked~.navbar-items>a {
+            transition-delay: 400ms;
+        }
+
+        .separator {
+            display: none;
+        }
+
+        .navbar-items a:is(:hover, :focus-within)::before {
+            width: 0%;
+        }
+
+        .hero-wrapper {
+            padding-inline-start: 1em;
+        }
+
+        .active::after {
+            background-color: transparent;
+        }
+    }
+</style>

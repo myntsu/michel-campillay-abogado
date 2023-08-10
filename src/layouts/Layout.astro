@@ -1,0 +1,295 @@
+---
+import Navbar from '../components/main/Navbar.astro';
+import Footer from '../components/main/Footer.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogUrl: string;
+  canonicalURL: string;
+  favicon?: string;
+  faviconLight?: string;
+}
+
+const { title = "Deico" } = Astro.props as Props;
+const { description = "" } = Astro.props as Props;
+const { ogTitle = "" } = Astro.props as Props;
+const { ogDescription = "" } = Astro.props as Props;
+const { ogUrl } = Astro.props as Props;
+const { canonicalURL } = Astro.props as Props;
+const { favicon = "favicon.svg", faviconLight = "" } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="icon" type="image/svg+xml" href={favicon} media="(prefers-color-scheme: dark)" />
+		<link rel="icon" type="image/svg+xml" href={faviconLight} media="(prefers-color-scheme: light)" />
+
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={ogTitle} />
+		<meta property="og:description" content={ogDescription} />
+		<meta property="og:url" content={ogUrl} />
+		<meta property="og:image" content="" />
+		<meta property="og:image:alt" content="Logo" />
+		<meta property="og:image:width" content="320" />
+		<meta property="og:image:height" content="180" />
+		
+		<link rel="canonical" href={canonicalURL} />
+
+		<script defer src="https://kit.fontawesome.com/76c49369ed.js" crossorigin="anonymous"></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<Navbar />
+		<slot />
+		<Footer />
+	</body>
+</html>
+<style is:global>
+	:root {
+    --height: 2rem;
+    --font: 1rem;
+    --radius: .25em;
+    --radius-accent: .5em;
+
+    --padding: 1em;
+
+    --white: 0, 100%, 100%;
+    --nav-link: 0, 0%, 100%;
+    --main-dark: 0, 0%, 7%;
+    --border-clr: 0, 0%, 100%;
+
+    --text: 0, 0%, 95%;
+    --text-contrast: 0, 20%, 20%;
+    --important: 0, 61%, 49%;
+	--important-contrast: 0, 73%, 67%;
+    --shadow: 0, 100%, 100%;
+    --tag: 206, 100%, 6%;
+	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		width: 100%;
+		margin: 0;
+		color: hsl(var(--text));
+		background-color: hsl(var(--white));
+		font-family: 'Montserrat', sans-serif;
+		font-size: var(--font);
+		font-weight: 400;
+		line-height: 1.5;
+		overflow-x: hidden;
+	}
+
+	main {
+		overflow-x: hidden;
+	}
+
+	section {
+		padding-block: 5rem;
+		padding-inline: 1rem;
+	}
+
+	/* Utility class */
+	.active {
+		color: hsl(var(--nav-link)) !important;
+		position: relative;
+		transition: 300ms linear;
+		transform-origin: left;
+	}
+
+	.active::after {
+		content: '';
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+
+		width: 70%;
+		height: 2px;
+
+		background-color: hsl(var(--important));
+	}
+
+	.hidden {
+		scale: 0;
+		transform-origin: left;
+		transition: all 1s;
+	}
+
+	.fade {
+		opacity: 0;
+		filter: blur(5px);
+		transition: opacity 1.5s;
+	}
+
+	.fade-in {
+		opacity: 0;
+		transform: translateX(100%);
+		filter: blur(5px);
+		transform-origin: right;
+		transition: all 2s;
+	}
+
+	.show {
+		scale: 1;
+		opacity: 1;
+		transform: translateX(0%);
+		filter: blur(0);
+	}
+
+	.shadow-container {
+		box-shadow: 1px 1px 2px hsl(var(--main-dark), 20%);
+	}
+
+	.navbar-bgswap {
+		background-color: hsl(var(--important)) !important;
+	}
+
+	.divider {
+		width: 100%;
+		height: 150px;
+		position: relative;
+		background-color: hsl(var(--white));
+	}
+
+	.divider:is(.invert) {
+		background-color: transparent;
+	}
+
+	.tag {
+		display: inline-block;
+		padding: .15em .35em;
+		color: hsl(var(--tag));
+		background-color: hsl(var(--white));
+		border-radius: var(--radius);
+	}
+
+	.price-tag {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-end;
+		gap: .25em;
+
+		padding: .5em;
+		color: hsl(var(--text));
+		background-color: hsl(var(--tag));
+		border-radius: var(--radius-accent);
+		font-size: calc((var(--font) + 0.1rem));
+
+		z-index: 5;
+		transition-delay: 1000ms;
+	}
+
+	.important {
+		color: hsl(var(--important));
+	}
+
+	.important-contrast {
+		color: hsl(var(--important-contrast)) !important;
+	}
+
+	@media(prefers-reduced-motion) {
+		* {
+			transition: none;
+			animation: none;
+		}
+	}
+
+	@media only screen and (max-width: 760px) {
+		.navbar {
+			background-color: hsl(var(--main-dark));
+		}
+
+		.navbar-wrapper {
+			justify-content: space-between;
+			position: relative;
+
+			padding: 2em 1.5em;
+		}
+
+		.navbar-toggler {
+			display: inline;
+		}
+
+		.navbar-items {
+			visibility: hidden;
+			position: absolute;
+			flex-direction: column;
+			gap: 1em;
+
+			opacity: 0;
+			transform: translateY(-150%);
+		}
+
+		#checkbox:checked~.navbar {
+			background-color: red;
+		}
+
+		#checkbox:checked {
+			margin-bottom: 5rem;
+		}
+
+		#checkbox:checked~.navbar-items {
+			visibility: visible;
+			top: 4rem;
+			left: 0;
+			z-index: 1;
+			transform: translate(100%, 0%);
+
+			width: 100%;
+			padding: 1em;
+
+			background-color: hsl(var(--main-dark));
+			border-bottom: 1px solid hsl(var(--border-clr), 80%);
+
+			opacity: 1;
+			transform: translateY(0%);
+			transform-origin: top;
+			transition: 500ms ease;
+		}
+
+		#checkbox:checked~.navbar-items>a {
+			transition-delay: 400ms;
+		}
+
+		.separator {
+			display: none;
+		}
+
+		.navbar-items a:is(:hover, :focus-within)::before {
+			width: 0%;
+		}
+
+		.hero-wrapper {
+			padding-inline-start: 1em;
+		}
+
+		.active::after {
+			background-color: transparent;
+		}
+	}
+</style>

@@ -1,0 +1,137 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<footer>
+    <div>
+        <div class="footer-links">
+            <a href="#Home">Inicio</a>
+            <a href="#About">Nosotros</a>
+            <a href="#Products">Productos</a>
+            <a href="#Contact">Contacto</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.mercadolibre.cl/">Mercado Libre</a>
+            <a href="https://www.shopify.com/">Shopify</a>
+            <a href="https://www.amazon.com/">Amazon</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.whatsapp.com/">Whatsapp</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.google.cl/">Google</a>
+        </div>
+        <div class="footer-aside">
+            <h3>Sígueme</h3>
+            <div class="social-media">
+                <a href="">
+                    <Icon name="mdi:facebook" />
+                </a>
+                <a href="">
+                    <Icon name="mdi:whatsapp" />
+                </a>
+                <a href="https://www.instagram.com" aria-label="Link a página de Instagram">
+                    <Icon name="mdi:instagram" />
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Footer */
+    footer {
+        width: 100%;
+        background-color: hsl(var(--main-dark));
+        padding-block-start: 5rem;
+    }
+
+    footer > div {
+        display: flex;
+        gap: 3em;
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: 1100px;
+        margin-inline: auto;
+        padding: var(--padding);
+        background-color: hsl(var(--main-dark));
+        border-top: 1px solid hsl(var(--border-clr), 20%);
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+        width: 150px;
+        padding-bottom: .5em;
+        border-bottom: 1px solid hsl(var(--border-clr), 20%);
+    }
+
+    .footer-links a {
+        color: hsl(var(--nav-link), 50%);
+        font-size: calc(var(--font) - 0.1rem);
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .footer-links a:hover {
+        color: hsl(var(--nav-link));
+    }
+
+    .footer-aside {
+        gap: .25em;
+        flex-wrap: wrap;
+        margin-inline-start: auto;
+    }
+
+    .footer-aside h3 {
+        width: 100%;
+        font-size: 1.25rem;
+        margin: 0;
+        text-align: center;
+    }
+
+    .footer-aside .social-media > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 2rem;
+    }
+
+    .social-media a {
+        color: hsl(var(--text));
+        text-decoration: none;
+        font-size: 1.75rem;
+    }
+
+    .social-media a:hover {
+        scale: .95;
+        opacity: .5;
+    }
+
+    .social-media svg {
+        width: 2rem;
+    }
+
+    @media only screen and (max-width: 880px) {
+        footer {
+            padding-block-start: 2.5rem;
+        }
+
+        footer > div {
+            height: 100%;
+            gap: 1.5em;
+            border-top: 0;
+        }
+
+        .footer-links {
+            width: 100%;
+        }
+
+        .footer-aside {
+            margin: auto;
+            padding-bottom: 1em;
+        }
+    }
+</style>
