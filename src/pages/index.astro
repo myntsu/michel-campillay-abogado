@@ -5,15 +5,16 @@ import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
 import Contact from '../components/Contact.astro';
 import Products from '../components/Products.astro';
+import { Icon } from 'astro-icon';
 ---
 
 <Layout
-  title="Crece simple – Asesoría y gestión empresarial"
+  title="Estudio Jurídico Michel Campillay"
   description="Asesoría y gestión empresarial personalizada para tu empresa."
-  ogTitle="Crece simple – Asesoría y gestión empresarial"
+  ogTitle="Estudio Jurídico Michel Campillay"
   ogDescription="Asesoría y gestión empresarial personalizada para tu empresa."
-  ogUrl="https://deft-tulumba-dee734.netlify.app/"
-  canonicalURL="https://deft-tulumba-dee734.netlify.app/"
+  ogUrl="https://michel.campillay.cl/"
+  canonicalURL="https://michel.campillay.cl/"
   favicon="/favicon/favicon.svg"
   faviconLight="/favicon/favicon.svg">
 	<main>
@@ -23,119 +24,63 @@ import Products from '../components/Products.astro';
 		<Contact />
 	</main>
 
-  <div class="popup">
-    <div class="popup-alert">
-        <div class="alert-container">
-            <div class="alert">
-                <div>
-                    <i class="fa-solid fa-circle-info"></i>
-                </div>
-                <p class="social-media"> Si te gusto esta plantilla, no dudes en contactarme rellenando el <a href="#Contact" style="text-decoration: underline; color: white;">formulario</a>. Me pondré en contacto contigo via Whatsapp chat o Email.</p>
-            </div>
-        </div>
-    </div>
-    <button type="button" class="popup-toggle">
-        <span>+</span>
+    <button type="button" class="whatsapp-link" aria-label="Vinculo Whatsapp">
+        <a href="https://wa.me/+56952365795" target="_blank">
+            <Icon name="mdi:whatsapp" width="48" height="48" />
+            <p>¡Contáctanos!</p>
+        </a>
     </button>
-</div>
 </Layout>
 
-<style>
-.alert {
-    display: flex;
-    gap: 1em;
+<style lang="scss">
+    .whatsapp-link {
+        all: unset;
 
-    max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
 
-    margin: auto;
-    padding: 1em;
-    color: white;
-    background-color: rgba(153, 50, 204);
-    border-radius: var(--radius-accent);
-}
+        z-index: 99999;
 
-.alert > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: clamp(2.5rem, 1.5rem + 1.3333vw, 3rem);
-}
+        &:is(:hover, :focus-visible) {
+            a {
+                width: 100%;
+                height: 100%;
 
-.popup-alert {
-    display: flex;
-    bottom: 85px;
-    right: 20px;
+                p {
+                    display: block;
+                    padding-inline: .5rem;
+                }
+            }
+        }
 
-    position: fixed;
-    width: 0px;
-    height: 0px;
-    background-color: rgba(153, 50, 204);
-    border: 1px solid white;
-    border-radius: var(--radius);
 
-    opacity: 0;
-    visibility: collapse;
-    z-index: 9999;
-}
 
-.popup-alert.active-alert {
-    width: 400px;
-    height: auto;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 500ms ease-in-out;
-}
+        a {
+            display: flex;
+            align-items: center;
 
-.popup-alert.active-alert + .popup-toggle {
-    background-color: rgba(153, 50, 204);
-    border: 1px solid white;
-    scale: 1.05;
-}
+            width: 48px;
+            height: 48px;
 
-.popup-alert.active-alert + .popup-toggle span {
-    rotate: 45deg;
-}
+            color: hsl(var(--white));
+            background-color: hsl(115 70% 50%);
+            border-radius: 1.5rem 1.5rem 1.5rem .25rem;
+            text-decoration: none;
 
-.popup-alert::before {
-    content: '';
-    position: absolute;
-    right: 10px;
-    bottom: -11px;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(153, 50, 204);
-    border-bottom: 1px solid white;
-    border-right: 1px solid white;
-    rotate: 45deg;
-    z-index: 9990;
-}
+            svg {
+                display: block;
+            }
 
-.popup-toggle {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 50px;
-    height: 50px;
-
-    background-color: hsl(var(--important));
-    border: 0;
-    border-radius: 50%;
-
-    cursor: pointer;
-}
-
-.popup-toggle span {
-    display: block;
-    width: 100%;
-    color: hsl(var(--text));
-    font-size: 2rem;
-    transition: rotate 300ms linear;
-}
+            p {
+                display: none;
+                white-space: nowrap;
+                margin: 0;
+            }
+        }
+    }
 </style>
 
 <script>
