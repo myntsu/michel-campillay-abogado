@@ -10,16 +10,15 @@ export interface Props {
   ogUrl: string;
   canonicalURL: string;
   favicon?: string;
-  faviconLight?: string;
 }
 
-const { title = "Deico" } = Astro.props as Props;
-const { description = "" } = Astro.props as Props;
-const { ogTitle = "" } = Astro.props as Props;
-const { ogDescription = "" } = Astro.props as Props;
+const { title = "Estudio Jurídico Michel Campillay" } = Astro.props as Props;
+const { description = "Abogados en Iquique y Alto Hospicio para resolver tus necesidades empresariales y judiciales." } = Astro.props as Props;
+const { ogTitle = "Estudio Jurídico Michel Campillay" } = Astro.props as Props;
+const { ogDescription = "Abogados en Iquique y Alto Hospicio para resolver tus necesidades empresariales y judiciales." } = Astro.props as Props;
 const { ogUrl } = Astro.props as Props;
 const { canonicalURL } = Astro.props as Props;
-const { favicon = "favicon.svg", faviconLight = "" } = Astro.props as Props;
+const { favicon } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -27,8 +26,7 @@ const { favicon = "favicon.svg", faviconLight = "" } = Astro.props as Props;
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="icon" type="image/svg+xml" href={favicon} media="(prefers-color-scheme: dark)" />
-		<link rel="icon" type="image/svg+xml" href={faviconLight} media="(prefers-color-scheme: light)" />
+		<link rel="icon" type="image/svg+xml" href={favicon} />
 
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
@@ -37,7 +35,7 @@ const { favicon = "favicon.svg", faviconLight = "" } = Astro.props as Props;
 		<meta property="og:title" content={ogTitle} />
 		<meta property="og:description" content={ogDescription} />
 		<meta property="og:url" content={ogUrl} />
-		<meta property="og:image" content="" />
+		<meta property="og:image" content="/img/logo/logo-name.png" />
 		<meta property="og:image:alt" content="Logo" />
 		<meta property="og:image:width" content="320" />
 		<meta property="og:image:height" content="180" />

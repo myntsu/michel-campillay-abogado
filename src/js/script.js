@@ -61,7 +61,6 @@ function throttle(fn, ms) {
 const observer = new IntersectionObserver(
     entries => {
         entries.forEach(entry => {
-            console.log(entry)
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
                 observer.unobserve(entry.target);
@@ -75,14 +74,6 @@ const observer = new IntersectionObserver(
 
 const hiddenElements = document.querySelectorAll('.hidden, .fade-in, .fade');
 hiddenElements.forEach((el) => observer.observe(el));
-
-// Fixed alert popup
-let alert = document.querySelector('.popup-alert')
-let toggleAlert = document.querySelector('.popup-toggle');
-
-toggleAlert.onclick = function() {
-    alert.classList.toggle('active-alert');
-}
 
 // Details open/close on click
 const detailsElements = document.querySelectorAll('details');
