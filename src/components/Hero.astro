@@ -18,7 +18,7 @@ import CallToAction from "./utility/CallToAction.astro";
         </div>
 </header>
 
-<style>
+<style lang="scss">
     /* Header */
     #Home {
         background-image:
@@ -87,6 +87,10 @@ import CallToAction from "./utility/CallToAction.astro";
     .hero-wrapper h2 {
         font-size: clamp(1rem, 0.6154rem + 1.2308vw, 2rem);
         margin-block-end: 1.5rem;
+
+        span {
+            text-shadow: 1px 1px 0 hsl(var(--main-dark));
+        }
     }
 
     .call-to-action {

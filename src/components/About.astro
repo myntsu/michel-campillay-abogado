@@ -1,6 +1,6 @@
 ---
 // astro import
-import { Image, Picture } from '@astrojs/image/components';
+import { Icon } from 'astro-icon';
 ---
 
 <section id="About-us">
@@ -10,12 +10,12 @@ import { Image, Picture } from '@astrojs/image/components';
         <div class="wrapper">
             <div class="about-us">
                 <picture>
-                    <source media="(min-width: 700px)" srcset="/img/logo/logo-name.png 450w" />
-                    <source media="(max-width: 699px)" srcset="/img/logo/logo-name.png 800w" />
-                    <img loading="lazy" src="/img/logo/logo-name.png" alt="Lorem picsum" style="max-width: 100%;">
+                    <source media="(min-width: 700px)" srcset="/img/logo/logo-name.webp 450w" />
+                    <source media="(max-width: 699px)" srcset="/img/logo/logo-name.webp 800w" />
+                    <img loading="lazy" src="/img/logo/logo-name.webp" alt="Lorem picsum" style="max-width: 100%;">
                 </picture>
                 <div>
-                    <h3>Estudio jurídico</h3>
+                    <h3><Icon class="about-us-icon" name="mdi:scale-balance" /> Estudio jurídico</h3>
                     <p>Somos un estudio jurídico de abogados profesionales y comprometidos con la misión de brindar soluciones legales de calidad para proteger tus intereses. Ubicados en Iquique y Alto Hospicio, Región de Tarápaca.</p>
                     <p>Nuestro Estudio Jurídico está liderado por Michel Campillay Rondón, abogado titulado por la PUCV, <b class="important-contrast">especializado en derecho comercial y civil</b>. Con amplia experiencia en representar tanto a individuos como empresas.</p>
                     <h4>Nuestros servicios jurídicos:</h4>
@@ -34,17 +34,17 @@ import { Image, Picture } from '@astrojs/image/components';
         <h2>Nuestros pilares fundamentales</h2>
         <div class="about-us-wrapper">
             <div class="proposal fade">
-                <span class="icon"><i class="fa-solid fa-wrench"></i></span>
+                <span class="icon"><Icon class="proposal-icon" name="mdi:crown" /></span>
                 <h3 class="title">Calidad</h3>
                 <p class="description">Nuestro capacitado equipo de abogados se dedica a obtener los <b class="important-contrast">mejores resultados</b> para nuestros clientes. Confía en nosotros para representarte en tus asuntos legales.</p>
             </div>
             <div class="proposal fade">
-                <span class="icon"><i class="fa-solid fa-bolt"></i></span>
+                <span class="icon"><Icon class="proposal-icon" name="mdi:weather-windy" /></span>
                 <h3 class="title">Rapidez</h3>
                 <p class="description">Entendemos que <b class="important-contrast">el tiempo es crucial</b> en muchas situaciones legales, por lo que trabajamos diligentemente para resolver los casos de manera oportuna sin comprometer la calidad de nuestra representación.</p>
             </div>
             <div class="proposal fade">
-                <span class="icon"><i class="fa-solid fa-handshake"></i></span>
+                <span class="icon"><Icon class="proposal-icon" name="mdi:hand-extended" /></span>
                 <h3 class="title">Disposición</h3>
                 <p class="description">Estamos comprometidos a escuchar tus inquietudes y necesidades empresariales, ofreciendo asesoramiento comprensivo y accesible, para generar un ambiente en el que te sientas <b class="important-contrast">respaldado y orientado</b> en cada paso del proceso legal.</p>
             </div>
@@ -53,6 +53,26 @@ import { Image, Picture } from '@astrojs/image/components';
 </section>
 
 <style>
+    .main-picture {
+        max-width: 100%;
+    }
+
+    .about-us-icon {
+        display: inline;
+        width: 1.5rem;
+        aspect-ratio: 1;
+        position: relative;
+        top: 3px;
+        color: hsl(var(--important-contrast))
+    }
+
+    .proposal-icon {
+        display: block;
+        width: 2rem;
+        aspect-ratio: 1;
+        color: hsl(var(--white));
+    }
+
     #About-us {
         background-color: hsl(var(--main-dark));
     }
@@ -152,9 +172,9 @@ import { Image, Picture } from '@astrojs/image/components';
     }
 
     .icon {
-        display: flex;
+        display: grid;
+        place-items: center;
         justify-content: center;
-        align-items: center;
 
         width: calc(var(--padding) + 0.75rem);
         height: calc(var(--padding) + 0.75rem);
@@ -162,10 +182,6 @@ import { Image, Picture } from '@astrojs/image/components';
         padding: calc(var(--padding) + .75rem);
         background-color: hsl(var(--important));
         border-radius: 50%;
-    }
-
-    .icon i {
-        font-size: 1.5rem;
     }
 
     .title {
