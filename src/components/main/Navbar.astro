@@ -11,7 +11,7 @@ import { Icon } from "astro-icon";
         <input id="checkbox" type="checkbox" name="checkbox" value="checkbox"/>
         <label class="navbar-toggler" for="checkbox">
         <div class="toggler">
-            <Icon name="mdi:menu" />
+            <Icon name="ph:list-fill" />
         </div>
         </label>
         <div class="navbar-items">
@@ -61,7 +61,6 @@ import { Icon } from "astro-icon";
         width: 40px;
         height: 40px;
         object-fit: contain;
-        /* mix-blend-mode: multiply; */
     }
 
     .navbar-wrapper .logo span {
@@ -84,9 +83,8 @@ import { Icon } from "astro-icon";
         align-items: center;
         padding: .25em;
 
-        color: #B0B0B0;
-        fill: white;
-        border: 1px solid #B0B0B0;
+        color: hsl(var(--white));
+        border: 1px solid hsl(var(--white));
         border-radius: var(--radius);
 
         z-index: 2;
@@ -101,7 +99,7 @@ import { Icon } from "astro-icon";
         box-shadow: 0 0 0 2px hsl(var(--text));
     }
 
-    .toggler img {
+    .toggler svg {
         width: 32px;
         height: 32px;
     }
@@ -146,7 +144,7 @@ import { Icon } from "astro-icon";
     }
 
     .navbar:is(.navbar-bgswap) .navbar-items a:is(.active)::after {
-        background-color: hsl(var(--white)) !important;
+        background-color: hsl(var(--important)) !important;
     }
 
     .separator {
