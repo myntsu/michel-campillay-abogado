@@ -1,3 +1,7 @@
+---
+import { Icon } from "astro-icon";
+---
+
 <div class="divider">
     <div class="custom-shape-divider-bottom-1681399354">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -13,7 +17,7 @@
                 <h3>Contacto</h3>
                 <hr>
                 <p>Estamos preparados para brindarte la asistencia que tu empresa necesita. ¡No dudes en ponerte en contacto con nosotros!</p>
-                <p><i class="fa-solid fa-phone"></i> Nuestros abogados te contactarán por <b><i class="fa-brands fa-whatsapp"></i> Whatsapp</b> o <b><i class="fa-solid fa-envelope"></i> Email</b>.</p>
+                <Icon class="icon" name="mdi:phone" /> Nuestros abogados te contactarán por <b><Icon class="icon" name="mdi:whatsapp" /> Whatsapp</b> o <b><Icon class="icon" name="mdi:email" /> Email</b>.</p>
             </div>
             <div class="form-wrapper">
                 <div class="form-group">
@@ -32,8 +36,11 @@
                     <label for="descripción">Descripcion</label>
                     <textarea name="Descripcion" id="descripcion" cols="30" rows="7" placeholder="Buenas tardes, me gustaria conversar respecto de mi situación o un caso específico."></textarea>
                 </div>
-                <button class="submit-button" type="submit" aria-label="Botón para enviar información.">
-                    <span></span>
+                <button class="submit-button" type="submit" aria-label="Enviar formulario">
+                    <span>
+                        <Icon class="icon email-closed" name="mdi:email" />
+                        <Icon class="icon email-opened" name="mdi:email-open" />
+                    </span>
                 </button>
             </div>
         </form>
@@ -41,6 +48,13 @@
 </section>
 
 <style>
+    .icon {
+        width: 16px;
+        aspect-ratio: 1;
+        position: relative;
+        top: 3px;
+    }
+
     .custom-shape-divider-bottom-1681399354 {
         position: absolute;
         bottom: 0;
@@ -186,27 +200,34 @@
         overflow: hidden;
     }
 
-    .submit-button span::after {
-        content: '\f0e0';
-        font-family: "Font Awesome 6 Free";
-        font-weight: 900;
+    .submit-button .icon {
+        width: 36px;
+        position: static;
     }
 
-    .submit-button:is(:hover, :focus, :focus-within) span::after {
-        content: '\f658';
+    .submit-button span {
+        display: flex;
+    }
+
+    .submit-button .email-opened {
+        display: none;
+    }
+
+    .submit-button:is(:hover, :focus, :focus-within) .email-opened {
+        display: block;
+    }
+
+    .submit-button:is(:hover, :focus, :focus-within) .email-closed {
+        display: none;
     }
 
     .submit-button:is(:active) {
         scale: .9;
     }
 
-    .submit-button:is(:active) span {
+    .submit-button:is(:active) .email-opened {
         transform: translateX(200%);
         transition: 200ms ease-in;
-    }
-
-    .submit-button:is(:active) span::after {
-        content: '\f0e0';
     }
 
     @media only screen and (max-width: 760px) {
