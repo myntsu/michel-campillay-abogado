@@ -15,19 +15,19 @@
 
 <section id="Services">
   <div>
-    <h3>Servicios</h3>
-    <h2>Servicios que trato</h2>
+    <h3>Especialidades</h3>
+    <h2>Nuestros enfoques legales</h2>
     <div class="list-of-services">
       <article class="flip-card">
         <div class="flip-card-inner">
           <div class="front">
             <img
             class="card-img"
-              src="/img/pesquero.png"
+              src="/img/civil.jpg"
               alt=""
             />
             <div class="name-of-service">
-              <h4>Pesquero</h4>
+              <h4>Derecho Civil</h4>
             </div>
           </div>
           <div class="back">
@@ -46,34 +46,11 @@
           <div class="front">
             <img
             class="card-img"
-              src="/img/peruano.png"
+              src="/img/comercial.jpg"
               alt=""
             />
             <div class="name-of-service">
-              <h4>Oficina</h4>
-            </div>
-          </div>
-          <div class="back">
-            <h4>Algun titulo</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Dignissimos ut enim delectus quis totam, quod magni minus pariatur
-              labore repudiandae porro obcaecati perferendis explicabo autem
-              cumque distinctio nisi sint aliquid.
-            </p>
-          </div>
-        </div>
-      </article>
-      <article class="flip-card">
-        <div class="flip-card-inner">
-          <div class="front">
-            <img
-            class="card-img"
-              src="/img/construccion.jpg"
-              alt=""
-            />
-            <div class="name-of-service">
-              <h4>Construccion</h4>
+              <h4>Derecho Comercial</h4>
             </div>
           </div>
           <div class="back">
@@ -96,7 +73,7 @@
               alt=""
             />
             <div class="name-of-service">
-              <h4>Pesquero</h4>
+              <h4>Derecho Pesquero</h4>
             </div>
           </div>
           <div class="back">
@@ -115,11 +92,11 @@
           <div class="front">
             <img
             class="card-img"
-              src="/img/peruano.png"
+              src="/img/urbanistico.jpg"
               alt=""
             />
             <div class="name-of-service">
-              <h4>Oficina</h4>
+              <h4>Derecho Urbanístico</h4>
             </div>
           </div>
           <div class="back">
@@ -138,11 +115,35 @@
           <div class="front">
             <img
             class="card-img"
-              src="/img/construccion.jpg"
+              src="/img/laboral.jpg"
               alt=""
             />
             <div class="name-of-service">
-              <h4>Construccion</h4>
+              <h4>Derecho Laboral</h4>
+            </div>
+          </div>
+          <div class="back">
+            <h4>Algun titulo</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dignissimos ut enim delectus quis totam, quod magni minus pariatur
+              labore repudiandae porro obcaecati perferendis explicabo autem
+              cumque distinctio nisi sint aliquid.
+            </p>
+          </div>
+        </div>
+      </article>
+      <article class="flip-card">
+        <div class="flip-card-inner">
+          <div class="front">
+            <img
+            class="card-img"
+              src="/img/tributario.jpeg"
+              alt=""
+              data-image="tributario"
+            />
+            <div class="name-of-service">
+              <h4>Derecho Tributario</h4>
             </div>
           </div>
           <div class="back">
@@ -201,7 +202,6 @@
 
       width: 100%;
       max-width: 1100px;
-      margin-inline: auto;
       padding: var(--padding);
 
       h2 {
@@ -228,7 +228,8 @@
       auto-fit,
       minmax(min(var(--img-width), 100%), 1fr)
     );
-    gap: 1rem;
+    gap: 2rem;
+    margin-inline: auto;
 
     .flip-card {
       display: flex;
@@ -236,14 +237,12 @@
       width: var(--img-width);
       aspect-ratio: 1;
 
-      perspective: 1000px;
+      border-radius: .25rem;
 
       position: relative;
 
       &:is(:hover) {
-        .flip-card-inner {
-            transform: rotateY(180deg);
-        }
+        opacity: .95;
       }
 
       .flip-card-inner {
@@ -251,16 +250,12 @@
             width: 100%;
             height: 100%;
             text-align: center;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            backface-visibility: hidden;
-            -moz-backface-visibility: hidden;
+            border-radius: .25rem;
 
             box-shadow: 2px 2px 10px hsl(var(--main-dark), .8);
 
-            .front,
-            .back {
+            .front {
                 position: absolute;
                 inset: 0;
                 border-radius: 0.25rem;
@@ -299,18 +294,12 @@
                     backdrop-filter: blur(2px);
                 }
             }
-
-            .back {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding-inline: 1rem;
-                background-color: #2980b9;
-                color: white;
-                transform: rotateY(180deg);
-            }
         }
     }
+  }
+
+  [data-image="tributario"] {
+    object-fit: cover;
+    object-position: 0% 75%;
   }
 </style>

@@ -1,3 +1,8 @@
+---
+import { Icon } from "astro-icon";
+
+---
+
 <nav class="navbar">
     <div class="navbar-wrapper">
         <a href="/" class="logo" aria-label="Logo Crece Simple">
@@ -6,14 +11,13 @@
         <input id="checkbox" type="checkbox" name="checkbox" value="checkbox"/>
         <label class="navbar-toggler" for="checkbox">
         <div class="toggler">
-            <img src="../svg/hamburger.svg" alt="Hamburger toggler">
+            <Icon name="mdi:menu" />
         </div>
         </label>
         <div class="navbar-items">
             <a class="active" href="#Home">Inicio</a>
-            <a href="#About-me">Sobre mi</a>
-            <a href="#Services">Servicios</a>
-            <a href="#Affiliates">Afiliados</a>
+            <a href="#About-us">Nosotros</a>
+            <a href="#Services">Especialidades</a>
             <a href="#Contact">Contacto</a>
         </div>
     </div>
@@ -57,6 +61,7 @@
         width: 40px;
         height: 40px;
         object-fit: contain;
+        /* mix-blend-mode: multiply; */
     }
 
     .navbar-wrapper .logo span {
@@ -80,6 +85,7 @@
         padding: .25em;
 
         color: #B0B0B0;
+        fill: white;
         border: 1px solid #B0B0B0;
         border-radius: var(--radius);
 

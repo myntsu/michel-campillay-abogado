@@ -8,12 +8,12 @@
 
 <section id="Contact">
     <div class="wrapper">
-        <form action="https://formsubmit.co/dingodille16@hotmail.com" method="POST">
+        <form action="https://formsubmit.co/estudiojuridicomichelcampillay@gmail.com" method="POST">
             <div class="form-information">
                 <h3>Contacto</h3>
                 <hr>
-                <p>Si tienes alguna duda, consulta o <b>compras al por mayor</b>, no dudes en enviarnos tu informacion.</p>
-                <p><i class="fa-solid fa-phone"></i> Te contactaremos directamente por <b><i class="fa-brands fa-whatsapp"></i> Whatsapp</b> o <b><i class="fa-solid fa-envelope"></i> Email</b>.</p>
+                <p>Estamos preparados para brindarte la asistencia que tu empresa necesita. ¡No dudes en ponerte en contacto con nosotros!</p>
+                <p><i class="fa-solid fa-phone"></i> Nuestros abogados te contactarán por <b><i class="fa-brands fa-whatsapp"></i> Whatsapp</b> o <b><i class="fa-solid fa-envelope"></i> Email</b>.</p>
             </div>
             <div class="form-wrapper">
                 <div class="form-group">
@@ -25,26 +25,18 @@
                     <input id="email" type="email" name="Email" placeholder="ejemplo@email.com" autocomplete="email">
                 </div>
                 <div class="form-group">
-                    <label for="telefono">Telefono</label>
+                    <label for="telefono">Teléfono</label>
                     <input id="telefono" type="text" name="Telefono" placeholder="+569 1234 5678" autocomplete="tel">
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">Descripcion</label>
-                    <textarea name="Descripcion" id="descripcion" cols="30" rows="7" placeholder="Buenas tardes, me gustaria conversar respecto de uno de los planes presentados arriba."></textarea>
+                    <label for="descripción">Descripcion</label>
+                    <textarea name="Descripcion" id="descripcion" cols="30" rows="7" placeholder="Buenas tardes, me gustaria conversar respecto de mi situación o un caso específico."></textarea>
                 </div>
                 <button class="submit-button" type="submit" aria-label="Botón para enviar información.">
                     <span></span>
                 </button>
             </div>
         </form>
-        <div class="map-wrapper">
-            <h3>Ubicacion</h3>
-            <hr>
-            <h4><i class="fa-solid fa-location-dot"></i> Av. Heroes de la Concepcion #2555</h4>
-            <h4>Local 205 - Segundo piso</h4>
-            <!--The div element for the map -->
-            <iframe title="Mapa de Google Maps" id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.629214419023!2d-70.14498374984643!3d-20.232723252951633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915215bc3efe03d9%3A0xe1c9577a6f8ed42c!2sMallplaza%20Iquique!5e0!3m2!1sen!2scl!4v1668007012495!5m2!1sen!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
     </div>
 </section>
 
@@ -215,42 +207,6 @@
 
     .submit-button:is(:active) span::after {
         content: '\f0e0';
-    }
-
-    .map-wrapper {
-        width: 100%;
-        max-width: 1100px;
-
-        margin: 1em auto;
-        padding: var(--padding);
-        border: 1px solid hsl(var(--border-clr), 20%);
-        border-top: 5px solid hsl(var(--important));
-        border-bottom: 5px solid hsl(var(--important));
-        border-radius: var(--radius-accent);
-    }
-
-    .map-wrapper h3 {
-        margin: 0;
-    }
-
-    .map-wrapper h4 {
-        color: gray;
-        font-size: calc(var(--font) - 0.1rem);
-    }
-
-    .map-wrapper h4:nth-of-type(1) {
-        margin: 0;
-    }
-
-    .map-wrapper h4:nth-of-type(2) {
-        margin-top: 0;
-    }
-
-    #map {
-        width: 100%;
-        height: clamp(300px, 50vw, 600px);
-        border: 0;
-        border-radius: var(--radius);
     }
 
     @media only screen and (max-width: 760px) {

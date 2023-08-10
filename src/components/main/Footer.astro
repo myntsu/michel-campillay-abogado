@@ -6,34 +6,14 @@ import { Icon } from "astro-icon";
     <div>
         <div class="footer-links">
             <a href="#Home">Inicio</a>
-            <a href="#About">Nosotros</a>
-            <a href="#Products">Productos</a>
+            <a href="#About-us">Nosotros</a>
+            <a href="#Services">Especialidades</a>
             <a href="#Contact">Contacto</a>
         </div>
-        <div class="footer-links">
-            <a href="https://www.mercadolibre.cl/">Mercado Libre</a>
-            <a href="https://www.shopify.com/">Shopify</a>
-            <a href="https://www.amazon.com/">Amazon</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://www.facebook.com/">Facebook</a>
-            <a href="https://www.whatsapp.com/">Whatsapp</a>
-            <a href="https://www.instagram.com/">Instagram</a>
-            <a href="https://www.google.cl/">Google</a>
-        </div>
-        <div class="footer-aside">
-            <h3>Sígueme</h3>
-            <div class="social-media">
-                <a href="">
-                    <Icon name="mdi:facebook" />
-                </a>
-                <a href="">
-                    <Icon name="mdi:whatsapp" />
-                </a>
-                <a href="https://www.instagram.com" aria-label="Link a página de Instagram">
-                    <Icon name="mdi:instagram" />
-                </a>
-            </div>
+        <div class="contact-info">
+            <p><Icon name="mdi:map-marker" /> <span class="bold">Iquique y Alto Hospicio</span>, Región de Tarapacá, Chile.</p>
+            <p><Icon name="mdi:phone" /> Teléfono: <span class="bold">+56 9 5236 5795.</span></p>
+            <p><Icon name="mdi:email" /> Correo electrónico: <span class="bold">estudiojuridicomichelcampilay@gmail.com</span></p>
         </div>
     </div>
 </footer>
@@ -66,6 +46,30 @@ import { Icon } from "astro-icon";
         width: 150px;
         padding-bottom: .5em;
         border-bottom: 1px solid hsl(var(--border-clr), 20%);
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+        padding-bottom: .5em;
+        border-bottom: 1px solid hsl(var(--border-clr), 20%);
+    }
+
+    .contact-info p {
+        margin: 0;
+        color: hsl(var(--nav-link), 50%);
+    }
+
+    .contact-info p svg {
+        width: 20px;
+        aspect-ratio: 1;
+        position: relative;
+        top: 4px;
+    }
+
+    .contact-info p .bold {
+        color: hsl(var(--white)) !important;
     }
 
     .footer-links a {
@@ -122,7 +126,6 @@ import { Icon } from "astro-icon";
         footer > div {
             height: 100%;
             gap: 1.5em;
-            border-top: 0;
         }
 
         .footer-links {
