@@ -164,6 +164,22 @@ const { favicon = "favicon.svg", faviconLight = "" } = Astro.props as Props;
 		background-color: hsl(var(--white)) !important;
 	}
 
+	.navbar-bgswap .toggler {
+		border: 1px solid hsl(var(--main-dark));
+	}
+
+	.navbar-bgswap .navbar-toggler svg {
+		color: hsl(var(--main-dark));
+	}
+
+	.navbar-bgswap .navbar-items a {
+		color: hsl(var(--main-dark), .7);
+	}
+
+	.navbar-bgswap .navbar-items a.active {
+		color: hsl(var(--main-dark)) !important;
+	}
+
 	.divider {
 		width: 100%;
 		height: 150px;
@@ -243,6 +259,13 @@ const { favicon = "favicon.svg", faviconLight = "" } = Astro.props as Props;
 
 			opacity: 0;
 			transform: translateY(-150%);
+		}
+
+		.navbar-wrapper .logo {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, 0%);
 		}
 
 		#checkbox:checked~.navbar {
