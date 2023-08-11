@@ -53,7 +53,7 @@ const { favicon } = Astro.props as Props;
 		<Footer />
 	</body>
 </html>
-<style is:global>
+<style is:global lang="scss">
 	:root {
     --height: 2rem;
     --font: 1rem;
@@ -310,6 +310,12 @@ const { favicon } = Astro.props as Props;
 
 		.active::after {
 			background-color: transparent;
+		}
+	}
+
+	section {
+		h2 {
+			font-size: clamp(1.75rem, 1.0851rem + 2.1277vw, 3rem) !important;
 		}
 	}
 </style>

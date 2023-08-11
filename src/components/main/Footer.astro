@@ -11,9 +11,9 @@ import { Icon } from "astro-icon";
             <a href="#Contact">Contacto</a>
         </div>
         <div class="contact-info">
-            <p><Icon name="mdi:map-marker" /> <span class="bold">Iquique y Alto Hospicio</span>, Región de Tarapacá, Chile.</p>
-            <p><Icon name="mdi:phone" /> Teléfono: <span class="bold">+56 9 5236 5795.</span></p>
-            <p><Icon name="mdi:email" /> Correo electrónico: <span class="bold">estudiojuridicomichelcampilay@gmail.com</span></p>
+            <p><Icon name="mdi:map-marker" /> <span class="bold">Iquique y Alto Hospicio,</span> Región de Tarapacá, Chile.</p>
+            <p><Icon name="mdi:phone" /> Teléfono: <a href="tel:56952365795" class="bold">+56 9 5236 5795</a></p>
+            <p><Icon name="mdi:email" /> Correo electrónico: <a href="mailto: estudiojuridicomichelcampilay@gmail.com" class="bold">estudiojuridico@gmail.com</a></p>
         </div>
     </div>
 </footer>
@@ -24,6 +24,7 @@ import { Icon } from "astro-icon";
         width: 100%;
         background-color: hsl(var(--main-dark));
         padding-block-start: 5rem;
+        padding-block-end: 2.5rem;
     }
 
     footer > div {
@@ -58,6 +59,10 @@ import { Icon } from "astro-icon";
     }
 
     .contact-info p {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .25rem;
         margin: 0;
         color: hsl(var(--nav-link), 50%);
     }
@@ -66,7 +71,6 @@ import { Icon } from "astro-icon";
         width: 20px;
         aspect-ratio: 1;
         position: relative;
-        top: 4px;
     }
 
     .contact-info p .bold {
@@ -130,6 +134,17 @@ import { Icon } from "astro-icon";
         }
 
         .footer-links, .contact-info {
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer-links, .contact-info p {
+            justify-content: center;
+            gap: .25rem;
+        }
+
+        .footer-links, .contact-info p a {
+            /* margin-block-start: .5rem; */
             width: 100%;
         }
     }
