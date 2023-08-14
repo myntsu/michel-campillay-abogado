@@ -34,10 +34,8 @@ window.addEventListener(
   throttle(() => {
     if (window.scrollY - 10 < mainDistance) {
       navbar.classList.remove("navbar-bgswap");
-      navbarItems.classList.remove("navbar-bgswap");
     } else {
       navbar.classList.add("navbar-bgswap");
-      navbarItems.classList.add("navbar-bgswap");
     }
   }),
   50,
