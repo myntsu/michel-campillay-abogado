@@ -161,6 +161,12 @@ const { favicon } = Astro.props as Props;
 		background-color: hsl(var(--white)) !important;
 	}
 
+	@media only scree and (max-width: 760px) {
+		.navbar-bgswap .navbar-items {
+			background-color: hsl(var(--white)) !important;
+		}
+	}
+
 	.navbar-bgswap .toggler {
 		border: 1px solid hsl(var(--main-dark));
 	}
@@ -289,7 +295,7 @@ const { favicon } = Astro.props as Props;
 			opacity: 1;
 			transform: translateY(0%);
 			transform-origin: top;
-			transition: 500ms ease;
+			transition: 300ms ease;
 		}
 
 		#checkbox:checked~.navbar-items>a {
