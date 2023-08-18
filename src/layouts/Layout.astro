@@ -318,4 +318,14 @@ const { favicon } = Astro.props as Props;
 			font-size: clamp(1.75rem, 1.0851rem + 2.1277vw, 3rem) !important;
 		}
 	}
+
+	.sr-only:not(:focus):not(:active) {
+		clip: rect(0 0 0 0); 
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap; 
+		width: 1px;
+	}
 </style>
